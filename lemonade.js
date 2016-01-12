@@ -1,28 +1,37 @@
 "use strict";
 
-function generateWeather() {
-	var days = [" Monday", " Tuesday", " Wednesday", " Thursday", " Friday", " Saturday", " Sunday"];
-	var weather = [" Sunny", " Cloudy", " Snowy"];
-	var forecast = []
-	var weatherToday
-	var weatherMultiplier
-	for (var i = 0; i < days.length; i++) {
+function genWeather() {
+	var weatherToday;
+	var weather;
+	weather = ["Sunny", "Cloudy", "Snowy"];
+	for (var i = 0; i < weather.length; i++) {
 		weatherToday = weather[Math.floor(Math.random() * weather.length)];
-	    forecast[i] = weatherToday;
-	}
-	if (weather = "Sunny")	{
-		weatherMultiplier = 2;
-	} else if (weather = "Cloudy") {
-		weatherMultiplier = 1;
-	} else if (weather = "Snowy") {
-		weatherMultiplier = .5; 
-	}
-	document.getElementById("day").innerHTML = days;
-	document.getElementById("weather").innerHTML = forecast;
-
+		return weatherToday;
+		
+    }
 }
-console.log (generateWeather());
-
+function genTemperature(weather) { !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	var temperatureToday
+	weather = genWeather();
+	if (weather = "Sunny") {
+		temperatureToday = Math.floor((Math.random() * 41) + 60);
+		return temperatureToday
+	} else if (weather = "Cloudy") {
+		temperatureToday = Math.floor((Math.random() * 41) + 30);
+		return temperatureToday
+	} else if (weather = "Snowy") {
+		temperatureToday = Math.floor((Math.random() * 41) + 0);
+		return temperatureToday
+	}
+}
+function calcForecast(weather, temperature) {
+	var forecast
+	weather = genWeather();
+	temperature = genTemperature();
+	forecast = console.log("Today's weather will be " + temperature + " and " + weather);
+	return forecast
+}
+calcForecast();
 function buyCups() {
 	var total = 20;
 	var cups
@@ -55,8 +64,6 @@ function buyCups() {
 }
 
 function buyLemons() {
-	var total = 20;
-	var lemons;
 	var qLemonsOne;
 	var qLemonsTwo;
 	var qLemonsThree;
@@ -84,8 +91,6 @@ function buyLemons() {
 	} else {
 		
 	}
-	console.log(total);
-	console.log(lemons);
 }
 
 function buySugar() {
@@ -118,8 +123,6 @@ function buySugar() {
 	} else {
 		
 	}
-	console.log(total);
-	console.log(sugar);
 }
 
 function buyIce() {
@@ -128,8 +131,8 @@ function buyIce() {
 	var pIceThree;
 	
 	pIceOne = .90;
-	pIceTwo = 2.08;
-	pIceThree = 3.72;
+	pIceTwo = 2.10;
+	pIceThree = 3.75;
 	
 	var icePrompt = prompt("How many ice cubes would you like to purchase? 100, 250, or 500")
 	if (icePrompt === "100") {
@@ -144,8 +147,6 @@ function buyIce() {
 	} else {
 		
 	}
-	console.log(total);
-	console.log(ice);
 }
 
 function calcExpenses(cups, lemons, sugar, ice) {
@@ -160,10 +161,8 @@ function calcExpenses(cups, lemons, sugar, ice) {
 	total = initialMoney - expenses;
 	console.log("You have $" + total +" remaining.");
 	return total;
-	
 }
 
-calcExpenses();
 
 
 	
