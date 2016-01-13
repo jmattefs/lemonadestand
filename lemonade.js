@@ -95,7 +95,7 @@ function revenue(buyers, price, total){
 	price = priceArray[0];
 	total = buyers * price;
 	alert("You have sold $"+ total + " of lemonade today.")
-	document.getElementById("day1rev").innerHTML = "Day 1 Revenue: $ "+ total
+	document.getElementById("day1rev").innerHTML = "Monday's Revenue: $ "+ total
 	revenueArray.push(total);
 	console.log(buyers)
 	console.log(price)
@@ -106,7 +106,7 @@ function revenueTwo (buyers, price, total){
 	price = priceArray[1];
 	total = buyers * price;
 	alert("You have sold $"+ total + " of lemonade today.")
-	document.getElementById("day2rev").innerHTML = "Day 2 Revenue: $ "+ total
+	document.getElementById("day2rev").innerHTML = "Tuesday's Revenue: $ "+ total
 	revenueArray.push(total);
 	console.log(buyers)
 	console.log(price)
@@ -117,7 +117,7 @@ function revenueThree (buyers, price, total){
 	price = priceArray[2];
 	total = buyers * price;
 	alert("You have sold $"+ total + " of lemonade today.")
-	document.getElementById("day3rev").innerHTML = "Day 3 Revenue: $ "+ total
+	document.getElementById("day3rev").innerHTML = "Wednesday's Revenue: $ "+ total
 	revenueArray.push(total);
 	console.log(buyers)
 	console.log(price)
@@ -128,7 +128,7 @@ function revenueFour (buyers, price, total){
 	price = priceArray[3];
 	total = buyers * price;
 	alert("You have sold $"+ total + " of lemonade today.")
-	document.getElementById("day4rev").innerHTML = "Day 4 Revenue: $ "+ total
+	document.getElementById("day4rev").innerHTML = "Thursday's Revenue: $ "+ total
 	revenueArray.push(total);
 	console.log(buyers)
 	console.log(price)
@@ -139,7 +139,7 @@ function revenueFive (buyers, price, total){
 	price = priceArray[4];
 	total = buyers * price;
 	alert("You have sold $"+ total + " of lemonade today.")
-	document.getElementById("day5rev").innerHTML = "Day 5 Revenue: $ "+ total
+	document.getElementById("day5rev").innerHTML = "Friday's Revenue: $ "+ total
 	revenueArray.push(total);
 	console.log(buyers)
 	console.log(price)
@@ -365,7 +365,9 @@ function dayFourTransition(money, weather){
 }
 function dayFiveTransition(money){
 	money= transicionFive();
-	alert("The week is over. You started with $20 and now you have $ " + money);
+	if(alert("The week is over. You started with $20 and now you have $ " + money + "!")){}
+	else window.location.reload();
+	
 }
 function transicionTwo(money){
 	money = moneyArray[0]+revenueArray[2];
@@ -431,15 +433,10 @@ function main() {
 	revenueD = revenueFour();
 	dayFour = dayFourTransition();
 	revenueE = revenueFive();
-	dayFive = dayFiveTransition();
-	
-	
-	
-	
-	
+	dayFive = dayFiveTransition();	
 
 }
-main()
+
 
 
 	
