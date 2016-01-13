@@ -1,37 +1,6 @@
 "use strict";
 
-var lemon = {
-	priceOne: .60,
-	priceTwo: 1.70,
-	priceThree: 3.30,
-	qOne: 10,
-	qTwo: 30,
-	qThree: 75,
-}
-var cup = {
-	priceOne: .80,
-	priceTwo: 1.65,
-	priceThree: 3.15,
-	qOne: 25,
-	qTwo: 50,
-	qThree: 100,
-}
-var sugar = {
-	priceOne: .65,
-	priceTwo: 1.70,
-	priceThree: 3.35,
-	qOne: 8,
-	qTwo: 20,
-	qThree: 48,
-}
-var ice = {
-	priceOne: .90,
-	priceTwo: 2.10,
-	priceThree: 3.75,
-	qOne: 100,
-	qTwo: 250,
-	qThree: 500,
-}
+
 var priceArray = [];
 var revenueArray = [];
 var cupArray = [];
@@ -39,6 +8,7 @@ var lemonArray = [];
 var sugarArray = [];
 var iceArray = [];
 var buyersArray = [];
+var moneyArray = [];
 
 function genWeather() {
 	var weatherToday;
@@ -75,7 +45,7 @@ function calcForecast(weather, temperature) {
 		weather = "cloudy";
 	}
 	forecast = alert("Today's weather will be " + temperature + " degrees and " + weather);
-	document.getElementById("forecast").innerHTML ="Day 1 Temperature: "+ temperature + " degrees and " + weather;
+	document.getElementById("forecast").innerHTML ="The forecast for today is "+ temperature + " degrees and " + weather;
 	return forecast
 }
 function weatherPrompt() {
@@ -100,9 +70,9 @@ function customerQ(Q) {
 	temperature = genTemperature();
 	regular = 50;
 	twentysix = 26
-	if (temperature > 65) {
+	if (temperature > 70) {
 		Q = regular + twentysix;
-	} else if (temperature < 45) {
+	} else if (temperature < 30) {
 		Q = regular - twentysix;
 	} else {
 		Q = regular
@@ -131,7 +101,50 @@ function revenue(buyers, price, total){
 	console.log(price)
 	return total;
 }	
-
+function revenueTwo (buyers, price, total){
+    buyers = sales();
+	price = priceArray[1];
+	total = buyers * price;
+	alert("You have sold $"+ total + " of lemonade today.")
+	document.getElementById("day2rev").innerHTML = "Day 2 Revenue: $ "+ total
+	revenueArray.push(total);
+	console.log(buyers)
+	console.log(price)
+	return total;
+}	
+function revenueThree (buyers, price, total){
+    buyers = sales();
+	price = priceArray[2];
+	total = buyers * price;
+	alert("You have sold $"+ total + " of lemonade today.")
+	document.getElementById("day3rev").innerHTML = "Day 3 Revenue: $ "+ total
+	revenueArray.push(total);
+	console.log(buyers)
+	console.log(price)
+	return total;
+}
+function revenueFour (buyers, price, total){
+    buyers = sales();
+	price = priceArray[3];
+	total = buyers * price;
+	alert("You have sold $"+ total + " of lemonade today.")
+	document.getElementById("day4rev").innerHTML = "Day 4 Revenue: $ "+ total
+	revenueArray.push(total);
+	console.log(buyers)
+	console.log(price)
+	return total;
+}
+function revenueFive (buyers, price, total){
+    buyers = sales();
+	price = priceArray[4];
+	total = buyers * price;
+	alert("You have sold $"+ total + " of lemonade today.")
+	document.getElementById("day5rev").innerHTML = "Day 5 Revenue: $ "+ total
+	revenueArray.push(total);
+	console.log(buyers)
+	console.log(price)
+	return total;
+}
 function buyCups() {
 	var total = 20;
 	var cups
@@ -176,20 +189,20 @@ function buyLemons() {
 	pLemonsOne = .60;
 	pLemonsTwo = 1.70;
 	pLemonsThree = 3.30;
-	qLemonsOne = 10
-	qLemonsTwo = 30
-	qLemonsThree = 75
-	var lemonPrompt = prompt("How many lemons would you like to purchase?  10, 30, or 75")
-	if (lemonPrompt === "10") {
-		document.getElementById("lemons").innerHTML = " 10 lemons ";
+	qLemonsOne = 25
+	qLemonsTwo = 50
+	qLemonsThree = 100
+	var lemonPrompt = prompt("How many lemons would you like to purchase?  25, 50, or 100")
+	if (lemonPrompt === "25") {
+		document.getElementById("lemons").innerHTML = " 25 lemons ";
 		lemonArray.push(qLemonsOne)
-		return lemon.priceOne
-	} else if (lemonPrompt === "30") {
-		document.getElementById("lemons").innerHTML = " 30 lemons ";
+		return pLemonsOne
+	} else if (lemonPrompt === "50") {
+		document.getElementById("lemons").innerHTML = " 50 lemons ";
 		lemonArray.push(qLemonsTwo)
 		return pLemonsTwo;
-	} else if (lemonPrompt === "75") {
-		document.getElementById("lemons").innerHTML=" 75 lemons ";
+	} else if (lemonPrompt === "100") {
+		document.getElementById("lemons").innerHTML=" 100 lemons ";
 		lemonArray.push(qLemonsThree)
 		return pLemonsThree;
 	} else {
@@ -207,24 +220,24 @@ function buySugar() {
 	var pSugarTwo;
 	var pSugarThree;
 	
-	qSugarOne = 8;
-	qSugarTwo = 20;
-	qSugarThree = 48;
+	qSugarOne = 25;
+	qSugarTwo = 50;
+	qSugarThree = 100;
 	pSugarOne = .65;
 	pSugarTwo = 1.70;
 	pSugarThree = 3.35;
 	
-	var sugarPrompt = prompt("How many units of sugar would you like to purchase?  8, 20, or 48")
-	if (sugarPrompt === "8") {
-		document.getElementById("sugar").innerHTML = " 8 units of sugar ";
+	var sugarPrompt = prompt("How many units of sugar would you like to purchase?  25, 50, or 100")
+	if (sugarPrompt === "25") {
+		document.getElementById("sugar").innerHTML = " 25 units of sugar ";
 		sugarArray.push(qSugarOne)
 		return pSugarOne;
-	} else if (sugarPrompt === "20") {
-		document.getElementById("sugar").innerHTML =" 20 units of sugar ";
+	} else if (sugarPrompt === "50") {
+		document.getElementById("sugar").innerHTML =" 50 units of sugar ";
 		sugarArray.push(qSugarTwo)
 		return pSugarTwo;
-	} else if (sugarPrompt === "48") {
-		document.getElementById("sugar").innerHTML =" 48 units of sugar ";
+	} else if (sugarPrompt === "100") {
+		document.getElementById("sugar").innerHTML =" 100 units of sugar ";
 		sugarArray.push(qSugarThree)
 		return pSugarThree;
 	} else {
@@ -277,21 +290,7 @@ function calcExpenses(cups, lemons, sugar, ice) {
 	document.getElementById("money").innerHTML = "You have $" + total +" remaining.";
 	return total;
 }
-function recipeLemons(){
-	var lemonPrompt = prompt("How many lemons do you want per pitcher?", "1")
-	document.getElementById("lr").innerHTML = lemonPrompt + " lemons per pitcher";
-	return lemonPrompt;
-}
-function recipeSugar(){
-	var sugarPrompt = prompt("How many cups of sugar do you want per pitcher?", "1")
-	document.getElementById("sr").innerHTML = sugarPrompt + " cups of sugar per pitcher";
-	return sugarPrompt;
-}
-function recipeIce(){
-	var icePrompt = prompt("How many ice cubes per glass?", "1")
-	document.getElementById("ir").innerHTML = icePrompt +" ice cubes per glass";
-	return icePrompt;
-}
+
 function cupPrice(){
 	var cupPrompt = prompt("How much will you sell a glass of lemonade for?", ".50")
 	document.getElementById("mr").innerHTML ="$ " +  cupPrompt;
@@ -299,17 +298,12 @@ function cupPrice(){
 	console.log(priceArray)
 	return cupPrompt;
 }
-function createRecipe(lemons, sugar, ice, cup){
-	lemons = recipeLemons();
-	sugar = recipeSugar();
-	ice = recipeIce();
-	cup = revenue()
-}
+
 function priceMultiplier(multiplier){
 	var price
 	price = cupPrice()
 	if (price > 1.25){
-		multiplier = .5
+		multiplier = .25
 	} else if (price < .5){
 		multiplier = 2
 	} else {
@@ -321,6 +315,7 @@ function priceMultiplier(multiplier){
 function transicion(money){
 	money = revenueArray[0]+revenueArray[1];
 	console.log(money)
+	moneyArray.push(money)
 	document.getElementById("sm2").innerHTML = "Money: $ "+ money;
 	return money
 }
@@ -348,28 +343,98 @@ function transitionI(ice){
 	document.getElementById("ir2").innerHTML = "Remaining Ice: " + ice;
 	return ice
 }
-function dayOneTransition(money, cups, lemons, sugar, ice){
+function dayOneTransition(money, cups, lemons, sugar, ice, weather){
 	money= transicion();
 	cups = transitionC();
 	lemons= transitionL();
 	sugar= transitionS();
 	ice = transitionI();
-}	
+	weather = weatherPrompt();
+}
+function dayTwoTransition(money, weather){
+	money= transicionTwo();
+	weather= weatherPrompt();
+}
+function dayThreeTransition(money, weather){
+	money= transicionThree();
+	weather= weatherPrompt();
+}
+function dayFourTransition(money, weather){
+	money= transicionFour();
+	weather= weatherPrompt();
+}
+function dayFiveTransition(money){
+	money= transicionFive();
+	alert("The week is over. You started with $20 and now you have $ " + money);
+}
+function transicionTwo(money){
+	money = moneyArray[0]+revenueArray[2];
+	console.log(money)
+	moneyArray.push(money)
+	document.getElementById("sm3").innerHTML = "Money: $ "+ money;
+	return money
+}
+function transicionThree(money){
+	money = moneyArray[1]+revenueArray[3];
+	console.log(money);
+	moneyArray.push(money);
+	document.getElementById("sm4").innerHTML = "Money: $ "+ money; 
+	return money
+}
+function transicionFour(money){
+	money = moneyArray[2]+revenueArray[4];
+	console.log(money);
+	moneyArray.push(money);
+	document.getElementById("sm5").innerHTML = "Money: $ "+ money; 
+	return money
+}
+function transicionFive(money){
+	money = moneyArray[3]+revenueArray[5];
+	return money
+}
+function calcExpenses2(cups, lemons, sugar, ice){
+	var currentMoney = moneyArray[0];
+	var expenses
+	var total
+	cups = buyCups()
+	lemons = buyLemons();
+	sugar = buySugar();
+	ice = buyIce();
+	expenses = cups +lemons+sugar+ice;
+	total = currentMoney - expenses
+	revenueArray.push(total)
+}
 function main() {
-	var recipe
+	
 	var calculateE
 	var weather
 	var dayOne
-	var cups
-	var lemons
-	
+	var dayTwo
+	var dayThree
+	var dayFour
+	var dayFive
+	var revenueA
+	var revenueB
+	var revenueC
+	var revenueD
+	var revenueE
 	
 	calculateE = calcExpenses();
 	weather = weatherPrompt();
-	recipe = createRecipe();
+	revenueA = revenue();
 	
 	dayOne = dayOneTransition();
-
+	revenueB = revenueTwo();
+    dayTwo = dayTwoTransition();
+	revenueC = revenueThree();
+	dayThree = dayThreeTransition();
+	revenueD = revenueFour();
+	dayFour = dayFourTransition();
+	revenueE = revenueFive();
+	dayFive = dayFiveTransition();
+	
+	
+	
 	
 	
 
