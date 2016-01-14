@@ -6,11 +6,15 @@
 		</head>
 		<body>
 		<div id="results">
-		<table><th>Lemonade Recipe <br> (per cup of lemonade)</th>
-				<tr><td><b>1 Lemon</b></td></tr>
-				<tr><td><b>1 cup of Sugar</b></td></tr>
+		<table id="right"><th>Lemonade Recipe <br> (per cup of lemonade)</th>
+				<tr><td><b>1 lemon</b></td></tr>
+				<tr><td><b>1 cup of sugar</b></td></tr>
 				<tr><td><b>2 ice cubes</b></td></tr>
 		</table>
+		<table><th>Weather Report</th>
+					<tr id="forecast"></tr>
+		</table>
+		
 		<table><th>End of Week Results</th>
 					<tr id="sm6"></tr>
 					<tr id="cr6"></tr>
@@ -18,11 +22,16 @@
 					<tr id="sr6"></tr>
 					<tr id="ir6"></tr>
 					<tr id="mr6"></tr>
-					<tr id="forecast6"></tr>
+					<tr id="space6"></tr>
 					<tr id="day6rev"></tr>
 				</table>
+				<div id="buttondiv">
+				<button onClick="this.style.display='none'; [main()];"> Click to Play! </button>
 			</div>
+			</div>
+			
 			<div id="tables">
+				
 				<table><th>Initial Supplies</th>
 					<tr id="cups"></tr>
 					<tr id="lemons"></tr>
@@ -81,14 +90,10 @@
 					<tr id="day5rev"></tr>
 				</table>
 				<br>
-				<table><th>Weather Report</th>
-					<tr id="forecast"></tr>
-				</table>
+				
 			</div>
 			
-			<div id="buttondiv">
-				<button onClick="this.style.display='none'; [main()];"> Click to Play! </button>
-			</div>
+			
 			<script src="lemonade.js"></script>
 		</body>
 	</html>
