@@ -6,6 +6,7 @@ th {
 	background-color: #85b7EA;
 	color: white;
 }
+
 table {
 	border: 1px black groove;
 	width: 500px;
@@ -25,4 +26,11 @@ button {
 	background-color: #0077c8;
 	color: white;
 	font-size: 24px;
+}
+#results {
+	float: right;
+	margin-right: 25 px;
+}
+#tables {
+	width: 500px;
 }

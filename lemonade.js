@@ -293,7 +293,7 @@ function calcExpenses(cups, lemons, sugar, ice) {
 }
 
 function cupPrice(){
-	var cupPrompt = prompt("How much will you sell a glass of lemonade for today?", ".50")
+	var cupPrompt = prompt("How much will you sell a glass of lemonade for today?", "1")
 	document.getElementById("mr").innerHTML ="$ " +  cupPrompt;
 	priceArray.push(cupPrompt)
 	console.log(priceArray)
@@ -323,18 +323,21 @@ function transicion(money){
 function transitionC(cups){
 	cups = cupArray[0]- buyersArray[0];
 	document.getElementById("cr2").innerHTML = "Remaining Cups: "+ cups;
+	cupArray.push(cups)
 	console.log(cupArray)
 	return cups
 }
 function transitionL(lemons){
 	lemons = lemonArray[0]- buyersArray[0];
 	document.getElementById("lr2").innerHTML = "Remaining Lemons: " + lemons;
+	lemonArray.push(lemons)
 	console.log(lemonArray)
 	return lemons
 }
 function transitionS(sugar){
 	sugar = sugarArray[0]- buyersArray[0];
 	document.getElementById("sr2").innerHTML = "Remaining Sugar: " + sugar;
+	sugarArray.push(sugar)
 	console.log(sugarArray)
 	return sugar
 }
@@ -342,6 +345,7 @@ function transitionI(ice){
 	ice = iceArray[0] - buyersArray[0];
 	console.log(buyersArray)
 	document.getElementById("ir2").innerHTML = "Remaining Ice: " + ice;
+	iceArray.push(ice)
 	return ice
 }
 function dayOneTransition(money, cups, lemons, sugar, ice, weather){
@@ -352,20 +356,149 @@ function dayOneTransition(money, cups, lemons, sugar, ice, weather){
 	ice = transitionI();
 	weather = weatherPrompt();
 }
-function dayTwoTransition(money, weather){
+function transitionCtwo(cups){
+	cups = cupArray[1]- buyersArray[1];
+	document.getElementById("cr3").innerHTML = "Remaining Cups: "+ cups;
+	cupArray.push(cups)
+	console.log(cupArray)
+	return cups
+}
+function transitionLtwo(lemons){
+	lemons = lemonArray[1]- buyersArray[1];
+	document.getElementById("lr3").innerHTML = "Remaining Lemons: " + lemons;
+	lemonArray.push(lemons)
+	console.log(lemonArray)
+	return lemons
+}
+function transitionStwo(sugar){
+	sugar = sugarArray[1]- buyersArray[1];
+	document.getElementById("sr3").innerHTML = "Remaining Sugar: " + sugar;
+	sugarArray.push(sugar)
+	console.log(sugarArray)
+	return sugar
+}
+function transitionItwo(ice){
+	ice = iceArray[1] - buyersArray[1];
+	console.log(buyersArray)
+	document.getElementById("ir3").innerHTML = "Remaining Ice: " + ice;
+	iceArray.push(ice)
+	return ice
+}
+function dayTwoTransition(money, cups, lemons, sugar, ice, weather){
 	money= transicionTwo();
+	cups= transitionCtwo();
+	lemons= transitionLtwo();
+	sugar= transitionStwo();
+	ice= transitionItwo();
 	weather= weatherPrompt();
 }
-function dayThreeTransition(money, weather){
+function transitionCthree(cups){
+	cups = cupArray[2]- buyersArray[2];
+	document.getElementById("cr4").innerHTML = "Remaining Cups: "+ cups;
+	cupArray.push(cups)
+	console.log(cupArray)
+	return cups
+}
+function transitionLthree(lemons){
+	lemons = lemonArray[2]- buyersArray[2];
+	document.getElementById("lr4").innerHTML = "Remaining Lemons: " + lemons;
+	lemonArray.push(lemons)
+	console.log(lemonArray)
+	return lemons
+}
+function transitionSthree(sugar){
+	sugar = sugarArray[2]- buyersArray[2];
+	document.getElementById("sr4").innerHTML = "Remaining Sugar: " + sugar;
+	sugarArray.push(sugar)
+	console.log(sugarArray)
+	return sugar
+}
+function transitionIthree(ice){
+	ice = iceArray[2] - buyersArray[2];
+	console.log(buyersArray)
+	document.getElementById("ir4").innerHTML = "Remaining Ice: " + ice;
+	iceArray.push(ice)
+	return ice
+}
+function dayThreeTransition(money, cups, lemons, sugar, ice, weather){
 	money= transicionThree();
+	cups = transitionCthree();
+	lemons = transitionLthree();
+	sugar = transitionSthree();
+	ice = transitionIthree();
 	weather= weatherPrompt();
 }
-function dayFourTransition(money, weather){
+function transitionCfour(cups){
+	cups = cupArray[3]- buyersArray[3];
+	document.getElementById("cr5").innerHTML = "Remaining Cups: "+ cups;
+	cupArray.push(cups)
+	console.log(cupArray)
+	return cups
+}
+function transitionLfour(lemons){
+	lemons = lemonArray[3]- buyersArray[3];
+	document.getElementById("lr5").innerHTML = "Remaining Lemons: " + lemons;
+	lemonArray.push(lemons)
+	console.log(lemonArray)
+	return lemons
+}
+function transitionSfour(sugar){
+	sugar = sugarArray[3]- buyersArray[3];
+	document.getElementById("sr5").innerHTML = "Remaining Sugar: " + sugar;
+	sugarArray.push(sugar)
+	console.log(sugarArray)
+	return sugar
+}
+function transitionIfour(ice){
+	ice = iceArray[3] - buyersArray[3];
+	console.log(buyersArray)
+	document.getElementById("ir5").innerHTML = "Remaining Ice: " + ice;
+	iceArray.push(ice)
+	return ice
+}
+function dayFourTransition(money, cups, lemons, sugar, ice, weather){
 	money= transicionFour();
+	cups = transitionCfour();
+	lemons = transitionLfour();
+	sugar = transitionSfour();
+	ice = transitionIfour();
 	weather= weatherPrompt();
 }
-function dayFiveTransition(money){
+function transitionCfive(cups){
+	cups = cupArray[4]- buyersArray[4];
+	document.getElementById("cr6").innerHTML = "Remaining Cups: "+ cups;
+	cupArray.push(cups)
+	console.log(cupArray)
+	return cups
+}
+function transitionLfive(lemons){
+	lemons = lemonArray[4]- buyersArray[4];
+	document.getElementById("lr6").innerHTML = "Remaining Lemons: " + lemons;
+	lemonArray.push(lemons)
+	console.log(lemonArray)
+	return lemons
+}
+function transitionSfive(sugar){
+	sugar = sugarArray[4]- buyersArray[4];
+	document.getElementById("sr6").innerHTML = "Remaining Sugar: " + sugar;
+	sugarArray.push(sugar)
+	console.log(sugarArray)
+	return sugar
+}
+function transitionIfive(ice){
+	ice = iceArray[4] - buyersArray[4];
+	console.log(buyersArray)
+	document.getElementById("ir6").innerHTML = "Remaining Ice: " + ice;
+	iceArray.push(ice)
+	return ice
+}
+function dayFiveTransition(money, cups, lemons, sugar, ice){
 	money= transicionFive();
+	cups= transitionCfive();
+	lemons= transitionLfive();
+	sugar= transitionSfive();
+	ice= transitionIfive();
+	document.getElementById("day6rev").innerHTML = "Total Revenue: " + money;
 	if(alert("The week is over. You started with $20 and now you have $ " + money + "!")){}
 	else window.location.reload();
 	
