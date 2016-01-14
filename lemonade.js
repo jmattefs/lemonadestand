@@ -251,7 +251,7 @@ function buyIce() {
 	var pIceTwo;
 	var pIceThree;
 	pIceOne = 2.5;
-	pIceTwo = 3.75F;
+	pIceTwo = 3.75;
 	pIceThree = 5;
 	var qIceOne
 	var qIceTwo
