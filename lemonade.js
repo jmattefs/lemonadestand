@@ -87,6 +87,7 @@ function sales(q, multiplier, impact){
 	var buyers;
 	buyers= Math.round(q * multiplier / impact);
 	buyersArray.push(buyers);
+	console.log(buyersArray)
 	return buyers
 }
 
@@ -155,23 +156,23 @@ function buyCups() {
 	var qCupsThree;
 	var pCupsThree;
 	
-	qCupsOne = 25;
-	qCupsTwo = 50;
-	qCupsThree = 100;
-	pCupsOne = .80;
-	pCupsTwo = 1.65;
-	pCupsThree = 3.15;
-	var cupPrompt = prompt("How many cups would you like to purchase? 25, 50, or 100")
-	if (cupPrompt === "25") {
-		document.getElementById("cups").innerHTML = " 25 cups ";
+	qCupsOne = 95;
+	qCupsTwo = 150;
+	qCupsThree = 200;
+	pCupsOne = 2.5;
+	pCupsTwo = 3.75;
+	pCupsThree = 5;
+	var cupPrompt = prompt("How many cups would you like to purchase for the week? 95, 150, or 200")
+	if (cupPrompt === "95") {
+		document.getElementById("cups").innerHTML = " 95 cups ";
 		cupArray.push(qCupsOne)
 		return pCupsOne
-	} else if (cupPrompt === "50") {
-		document.getElementById("cups").innerHTML =" 50 cups ";
+	} else if (cupPrompt === "150") {
+		document.getElementById("cups").innerHTML =" 150 cups ";
 		cupArray.push(qCupsTwo)
 		return pCupsTwo;
-	} else if (cupPrompt === "100") {
-		document.getElementById("cups").innerHTML =" 100 cups ";
+	} else if (cupPrompt === "200") {
+		document.getElementById("cups").innerHTML =" 200 cups ";
 		cupArray.push(qCupsThree)
 		return pCupsThree;
 	} else {
@@ -186,23 +187,23 @@ function buyLemons() {
 	var qLemonsOne;
 	var qLemonsTwo;
 	var qLemonsThree;
-	pLemonsOne = .60;
-	pLemonsTwo = 1.70;
-	pLemonsThree = 3.30;
-	qLemonsOne = 25
-	qLemonsTwo = 50
-	qLemonsThree = 100
-	var lemonPrompt = prompt("How many lemons would you like to purchase?  25, 50, or 100")
-	if (lemonPrompt === "25") {
-		document.getElementById("lemons").innerHTML = " 25 lemons ";
+	pLemonsOne = 2.5;
+	pLemonsTwo = 3.75;
+	pLemonsThree = 5;
+	qLemonsOne = 95
+	qLemonsTwo = 150
+	qLemonsThree = 200
+	var lemonPrompt = prompt("How many lemons would you like to purchase for the week?  95, 150, or 200")
+	if (lemonPrompt === "95") {
+		document.getElementById("lemons").innerHTML = " 95 lemons ";
 		lemonArray.push(qLemonsOne)
 		return pLemonsOne
-	} else if (lemonPrompt === "50") {
-		document.getElementById("lemons").innerHTML = " 50 lemons ";
+	} else if (lemonPrompt === "150") {
+		document.getElementById("lemons").innerHTML = " 150 lemons ";
 		lemonArray.push(qLemonsTwo)
 		return pLemonsTwo;
-	} else if (lemonPrompt === "100") {
-		document.getElementById("lemons").innerHTML=" 100 lemons ";
+	} else if (lemonPrompt === "200") {
+		document.getElementById("lemons").innerHTML=" 200 lemons ";
 		lemonArray.push(qLemonsThree)
 		return pLemonsThree;
 	} else {
@@ -220,24 +221,24 @@ function buySugar() {
 	var pSugarTwo;
 	var pSugarThree;
 	
-	qSugarOne = 25;
-	qSugarTwo = 50;
-	qSugarThree = 100;
-	pSugarOne = .65;
-	pSugarTwo = 1.70;
-	pSugarThree = 3.35;
+	qSugarOne = 95;
+	qSugarTwo = 150;
+	qSugarThree = 200;
+	pSugarOne = 2.5;
+	pSugarTwo = 3.75;
+	pSugarThree = 5;
 	
-	var sugarPrompt = prompt("How many units of sugar would you like to purchase?  25, 50, or 100")
-	if (sugarPrompt === "25") {
-		document.getElementById("sugar").innerHTML = " 25 units of sugar ";
+	var sugarPrompt = prompt("How many units of sugar would you like to purchase for the week?  95, 150, or 200")
+	if (sugarPrompt === "95") {
+		document.getElementById("sugar").innerHTML = " 95 units of sugar ";
 		sugarArray.push(qSugarOne)
 		return pSugarOne;
-	} else if (sugarPrompt === "50") {
-		document.getElementById("sugar").innerHTML =" 50 units of sugar ";
+	} else if (sugarPrompt === "150") {
+		document.getElementById("sugar").innerHTML =" 150 units of sugar ";
 		sugarArray.push(qSugarTwo)
 		return pSugarTwo;
-	} else if (sugarPrompt === "100") {
-		document.getElementById("sugar").innerHTML =" 100 units of sugar ";
+	} else if (sugarPrompt === "200") {
+		document.getElementById("sugar").innerHTML =" 200 units of sugar ";
 		sugarArray.push(qSugarThree)
 		return pSugarThree;
 	} else {
@@ -249,23 +250,23 @@ function buyIce() {
 	var pIceOne;
 	var pIceTwo;
 	var pIceThree;
-	pIceOne = .90;
-	pIceTwo = 2.10;
-	pIceThree = 3.75;
+	pIceOne = 2.5;
+	pIceTwo = 3.75F;
+	pIceThree = 5;
 	var qIceOne
 	var qIceTwo
 	var qIceThree
-	qIceOne= 100
-	qIceTwo= 250
+	qIceOne= 190
+	qIceTwo= 300
 	qIceThree= 500
 	
-	var icePrompt = prompt("How many ice cubes would you like to purchase? 100, 250, or 500")
-	if (icePrompt === "100") {
-		document.getElementById("ice").innerHTML = " 100 ice cubes";
+	var icePrompt = prompt("How many ice cubes would you like to purchase for the week? 190, 300, or 500")
+	if (icePrompt === "190") {
+		document.getElementById("ice").innerHTML = " 190 ice cubes";
 		iceArray.push(qIceOne)
 		return pIceOne;
-	} else if (icePrompt === "250") {
-		document.getElementById("ice").innerHTML = " 250 ice cubes";
+	} else if (icePrompt === "300") {
+		document.getElementById("ice").innerHTML = " 300 ice cubes";
 		iceArray.push(qIceTwo)
 		return pIceTwo;
 	} else if (icePrompt === "500") {
@@ -292,7 +293,7 @@ function calcExpenses(cups, lemons, sugar, ice) {
 }
 
 function cupPrice(){
-	var cupPrompt = prompt("How much will you sell a glass of lemonade for?", ".50")
+	var cupPrompt = prompt("How much will you sell a glass of lemonade for today?", ".50")
 	document.getElementById("mr").innerHTML ="$ " +  cupPrompt;
 	priceArray.push(cupPrompt)
 	console.log(priceArray)
