@@ -9,6 +9,7 @@ var sugarArray = [];
 var iceArray = [];
 var buyersArray = [];
 var moneyArray = [];
+var finalRev = [];
 
 function genWeather() {
 	var weatherToday;
@@ -303,10 +304,10 @@ function cupPrice(){
 function priceMultiplier(multiplier){
 	var price
 	price = cupPrice()
-	if (price > 1.25){
+	if (price > 1.5){
 		multiplier = .25
-	} else if (price < .5){
-		multiplier = 2
+	} else if (price < .3){
+		multiplier = 3
 	} else {
 		multiplier = 1
 	}
@@ -341,8 +342,9 @@ function transitionS(sugar){
 	console.log(sugarArray)
 	return sugar
 }
-function transitionI(ice){
-	ice = iceArray[0] - buyersArray[0];
+function transitionI(ice, doubleice){
+	doubleice = 2 * buyersArray[0];
+	ice = iceArray[0] - doubleice;
 	console.log(buyersArray)
 	document.getElementById("ir2").innerHTML = "Remaining Ice: " + ice;
 	iceArray.push(ice)
@@ -377,8 +379,9 @@ function transitionStwo(sugar){
 	console.log(sugarArray)
 	return sugar
 }
-function transitionItwo(ice){
-	ice = iceArray[1] - buyersArray[1];
+function transitionItwo(ice, doubleice){
+	doubleice = 2 * buyersArray[1];
+	ice = iceArray[1] - doubleice;
 	console.log(buyersArray)
 	document.getElementById("ir3").innerHTML = "Remaining Ice: " + ice;
 	iceArray.push(ice)
@@ -413,8 +416,9 @@ function transitionSthree(sugar){
 	console.log(sugarArray)
 	return sugar
 }
-function transitionIthree(ice){
-	ice = iceArray[2] - buyersArray[2];
+function transitionIthree(ice, doubleice){
+	doubleice = 2 * buyersArray[2];
+	ice = iceArray[2] - doubleice;
 	console.log(buyersArray)
 	document.getElementById("ir4").innerHTML = "Remaining Ice: " + ice;
 	iceArray.push(ice)
@@ -449,8 +453,9 @@ function transitionSfour(sugar){
 	console.log(sugarArray)
 	return sugar
 }
-function transitionIfour(ice){
-	ice = iceArray[3] - buyersArray[3];
+function transitionIfour(ice, doubleice){
+	doubleice = 2 * buyersArray[3];
+	ice = iceArray[3] - doubleice;
 	console.log(buyersArray)
 	document.getElementById("ir5").innerHTML = "Remaining Ice: " + ice;
 	iceArray.push(ice)
@@ -485,8 +490,9 @@ function transitionSfive(sugar){
 	console.log(sugarArray)
 	return sugar
 }
-function transitionIfive(ice){
-	ice = iceArray[4] - buyersArray[4];
+function transitionIfive(ice, doubleice){
+	doubleice = 2 * buyersArray[4];
+	ice = iceArray[4] - doubleice;
 	console.log(buyersArray)
 	document.getElementById("ir6").innerHTML = "Remaining Ice: " + ice;
 	iceArray.push(ice)
@@ -499,10 +505,14 @@ function dayFiveTransition(money, cups, lemons, sugar, ice){
 	sugar= transitionSfive();
 	ice= transitionIfive();
 	document.getElementById("day6rev").innerHTML = "Total Revenue: " + money;
-	if(alert("The week is over. You started with $20 and now you have $ " + money + "!")){}
-	else window.location.reload();
-	
+	var lastPrompt = prompt("The week is over.  You started with $20 and made $ "+ money + "! Type yes if you would like to sell back your remaining lemons, sugar, and cups.")
+	if (lastPrompt === "yes" || lastPrompt === "Yes") {
+		buyback();
+		if(alert("Your new total is $ " + finalRev[1] + "!")){}
+		else window.location.reload();
+	} else window.location.reload();
 }
+
 function transicionTwo(money){
 	money = moneyArray[0]+revenueArray[2];
 	console.log(money)
@@ -526,20 +536,34 @@ function transicionFour(money){
 }
 function transicionFive(money){
 	money = moneyArray[3]+revenueArray[5];
+	console.log(revenueArray)
+	console.log(moneyArray)
+	finalRev.push(money);
+	console.log(finalRev);
 	return money
 }
-function calcExpenses2(cups, lemons, sugar, ice){
-	var currentMoney = moneyArray[0];
-	var expenses
-	var total
-	cups = buyCups()
-	lemons = buyLemons();
-	sugar = buySugar();
-	ice = buyIce();
-	expenses = cups +lemons+sugar+ice;
-	total = currentMoney - expenses
-	revenueArray.push(total)
+function buybackLemons(lemons) {
+	lemons = lemonArray[4] * .1;
+	return lemons;
 }
+function buybackSugar(sugar) {
+	sugar = sugarArray[4] * .1;
+	return sugar;
+}
+function buybackCups(cups){
+	cups = cupArray[4] * .1;
+	return cups;
+}
+function buyback(lemons, sugar, cups, total, totalplus){
+	lemons = buybackLemons();
+	sugar = buybackSugar();
+	cups = buybackCups();
+	total = lemons + sugar + cups;
+	totalplus = total + finalRev[0];
+	finalRev.push(totalplus);
+	return totalplus;
+}
+
 function main() {
 	
 	var calculateE
